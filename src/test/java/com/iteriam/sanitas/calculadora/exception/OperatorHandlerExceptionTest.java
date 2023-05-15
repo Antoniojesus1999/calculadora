@@ -19,7 +19,7 @@ class OperatorHandlerExceptionTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testMethodArgumentTypeMismatchException() throws Exception {
+    void testMethodArgumentTypeMismatchException() throws Exception {
         mockMvc.perform(get("/operations")
                         .param("operand1", "100")
                         .param("operator", "valor-incorrecto-para-operator") // Valor incorrecto para causar la excepción

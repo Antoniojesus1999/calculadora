@@ -1,9 +1,12 @@
 package com.iteriam.sanitas.calculadora.controllers;
 
+import com.iteriam.sanitas.calculadora.controllers.constants.ConstantsController;
 import com.iteriam.sanitas.calculadora.controllers.responses.ResponseBase;
 import com.iteriam.sanitas.calculadora.controllers.responses.get.OperationResult;
 import com.iteriam.sanitas.calculadora.models.Operator;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +29,10 @@ public interface CalculatorController {
             summary = "Calculadora",
             description = "Calculadora suma y resta")
     @Tag(name = "API CALCULADORA", description = "Operations")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = ConstantsController.API_RESPONSE_200),
+            @ApiResponse(responseCode = "500", description = ConstantsController.API_RESPONSE_500)
+            })
     @GetMapping(value = "/operations", produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity<ResponseBase<OperationResult>> getOperation(
             @RequestParam("operand1") BigDecimal operand1,
