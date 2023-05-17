@@ -1,4 +1,4 @@
-package com.iteriam.sanitas.calculadora.controllers.exception.modelException;
+package com.iteriam.sanitas.calculadora.controllers.exception.model;
 
 import lombok.Getter;
 import lombok.Setter;

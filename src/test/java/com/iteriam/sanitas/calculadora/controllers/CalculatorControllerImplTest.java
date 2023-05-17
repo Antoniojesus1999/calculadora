@@ -1,7 +1,7 @@
 package com.iteriam.sanitas.calculadora.controllers;
 
 import com.iteriam.sanitas.calculadora.controllers.constants.ConstantsController;
-import com.iteriam.sanitas.calculadora.controllers.exception.OperandNullException;
+import com.iteriam.sanitas.calculadora.controllers.exception.model.OperandNullException;
 import com.iteriam.sanitas.calculadora.controllers.impl.CalculatorControllerImpl;
 import com.iteriam.sanitas.calculadora.controllers.responses.ResponseBase;
 import com.iteriam.sanitas.calculadora.controllers.responses.get.OperationResult;

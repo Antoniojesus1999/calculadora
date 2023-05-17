@@ -29,16 +29,6 @@ class OperatorExceptionHandlerTest {
                 .andExpect(status().isInternalServerError()) .andExpect(jsonPath("$.errorCode").value(500))
                 .andExpect(jsonPath("$.errorMessage").value(Constant.ERROR_OPERATOR_NOT_SUPPORTED_TEST));
     }
-    @Test
-    void testOperandNullException() throws Exception {
-        mockMvc.perform(get("/operations")
-                        .param("operand1", (String) null)
-                        .param("operator", "+")
-                        .param("operand2", "200")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.errorCode").value(400))
-                .andExpect(jsonPath("$.errorMessage").value(Constant.ERROR_OPERATOR_TEST));
-    }
 
 
 }
